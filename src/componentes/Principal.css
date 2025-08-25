@@ -1,0 +1,264 @@
+/*
+import "tailwindcss"; 
+
+.filtros {
+  @apply bg-cyan-200 shadow-lg shadow-cyan-700/50 rounded-full p-1;
+}
+
+
+.cabecalho {
+  @apply shadow-lg p-6 rounded-md bg-white text-center
+
+  
+}
+
+*/
+
+
+/*
+* ======================================
+* Identidade Visual: Localiza Já
+* ======================================
+*
+* Este arquivo CSS implementa a filosofia de design para o portal "Localiza Já".
+* A abordagem é baseada em cores e tipografia amigáveis e um layout limpo,
+* para garantir usabilidade e bem-estar do usuário.
+*/
+
+/* ------------------------------------- */
+/* 1. Variáveis (Cores e Tipografia)     */
+/* ------------------------------------- */
+
+
+:root {
+  /* Paleta de Cores */
+  --primary-blue: #1D3557;
+  /* Azul Escuro Tranquilo */
+  --secondary-green: #457B9D;
+  /* Verde Água Vibrante */
+  --accent-peach: #A8DADC;
+  /* Laranja Pêssego */
+  --white-soft: #F1FAEE;
+  /* Branco Suave */
+  --gray-dark: #4A4A4A;
+  /* Cinza Escuro */
+  --background-color: #F1FAEE;
+  /* Fundo da página */
+}
+
+/* ------------------------------------- */
+/* 2. Configuração Global e Tipografia   */
+/* ------------------------------------- */
+
+/*
+
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--gray-dark);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*/
+h1,
+h2,
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-blue);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* ------------------------------------- */
+/* 3. Layout e Componentes Reutilizáveis */
+/* ------------------------------------- */
+
+.container {
+  max-width: 1200px;
+  min-width: 300px;
+  margin: 0px;
+  padding: 0.5rem;
+  /*background-color: #1D3557;*/
+}
+
+.cabecalho-card {
+  background-color: var(--white-soft);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+}
+
+.filtro-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: var(--white-soft);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+  padding: 8px;
+}
+
+.resultado-card {
+  background-color: var(--white-soft);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  padding: 8px;
+}
+
+.lista-resultado {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imagem {
+  width: 95px;
+  height: 95px;
+}
+
+.item-card {
+  background-color: var(--white-soft);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  padding: 8px;
+  margin: 8px;
+  height: 300px;
+  width: 250px;
+}
+
+.establishment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.establishment-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.padding-card-content {
+  padding: 1.5rem;
+}
+
+.item-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.item-card p {
+  margin: 0 0 0.5rem 0;
+  font-size: .60rem;
+}
+
+.selecao {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Botões */
+.btn {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: var(--white-soft);
+}
+
+.btn-primary:hover {
+  background-color: #2b496e;
+  /* Um tom um pouco mais escuro */
+  transform: translateY(-2px);
+}
+
+/* Ícones de Redes Sociais */
+.social-icons-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--secondary-green);
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+  color: #5591b7;
+  /* Um tom um pouco mais escuro */
+}
+
+/* Estilo para formulários */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  color: var(--gray-dark);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--secondary-green);
+}
+
+/* Layout responsivo com Flexbox/Grid */
+.grid-container {
+  display: grid;
+  /*
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  */
+  gap: 2rem;
+
+}
+
+.nomeEstabelecimento {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.enderecoEstabelecimento {
+  margin: 0;
+  font-size: 0.7rem;
+}

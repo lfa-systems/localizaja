@@ -1,6 +1,6 @@
 import './App.css'
-import Paises from './componentes/Paises'
 import Notifica from './componentes/Notifica'
+import Principal from './componentes/Principal'
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
     <Notifica />
     
       <div>
-        <Paises />
+        <Principal />
       </div>
     </>
   )
